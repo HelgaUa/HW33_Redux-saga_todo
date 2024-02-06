@@ -1,8 +1,7 @@
 import {Button} from "./Button.jsx";
 import {useSelector, useDispatch } from "react-redux";
 import selectors from "../../engine/todo/redux/selectors.js";
-//import todoSlice from "../../engine/todo/redux/todoSlice.js";
-import { clearDataAsyncAction } from "../../engine/todo/saga/asynkActions.js";
+import { clearDataAsyncAction } from "../../engine/todo/saga/asyncActions.js";
 
 export function Footer() {
     const items = useSelector(selectors.itemsSelector);
@@ -11,10 +10,6 @@ export function Footer() {
         dispatch(clearDataAsyncAction());
         localStorage.clear();
     };
-    // const onClear = () => {
-    //     dispatch(todoSlice.actions.setItems([]));
-    //     localStorage.clear();
-    // };
 
     return (
         <div className='d-flex justify-content-between'>

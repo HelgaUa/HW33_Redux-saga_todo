@@ -5,8 +5,3 @@ export function* clearListWorker() {
     localStorage.clear();
 }
 
-//const dispatch = useDispatch();
-// const onClear = () => {
-//     dispatch(todoSlice.actions.setItems([]));
-//     localStorage.clear();
-// };
