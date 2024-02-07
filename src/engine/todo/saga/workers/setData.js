@@ -7,10 +7,12 @@ export function* setDataWorker(action) {
     payload.preventDefault();
     yield put(todoSlice.actions.setLoading(true));
     yield delay(1000);
-    yield put(todoSlice.actions.addItem(payload.target.text_input.value));
+
+    const inputValue = payload.target.text_input.value;
+    yield put(todoSlice.actions.addItem(inputValue));
     yield put(todoSlice.actions.setLoading(false));
     payload.target.text_input.value = '';
 
     const items = yield select(selectors.itemsSelector);
-    localStorage.setItem('items', JSON.stringify([...items, payload.target.text_input.value]));
+    localStorage.setItem('items', JSON.stringify(items));
 }

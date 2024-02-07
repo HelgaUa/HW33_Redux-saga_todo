@@ -15,6 +15,7 @@ export function List() {
     useEffect(() => {
         dispatch(getDataAsyncAction());
     }, []);
+
     console.log(items);
     return (
         <>

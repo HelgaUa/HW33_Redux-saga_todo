@@ -6,7 +6,9 @@ export function Form() {
     const dispatch = useDispatch();
     const loading = useSelector(selectors.loadingSelector);
     const onSubmitClick = (event) => {
+        console.log('onSubmitClick')
         dispatch(setDataAsyncAction(event));
+
     };
 
     return (
